@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Youssef Hachicha – Full Stack Developer and AI researcher</title>
+  <title>Youssef Hachicha - Full Stack Developer and AI researcher</title>
   <meta name="description" content="Portfolio of Youssef Hachicha: full stack developer and AI researcher, Master's student in Information Systems and New Technologies.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Youssef Hachicha – Full Stack Developer and AI researcher">
+  <meta property="og:title" content="Youssef Hachicha - Full Stack Developer and AI researcher">
   <meta property="og:description" content="Portfolio of Youssef Hachicha: full stack developer and AI researcher.">
   <meta name="theme-color" content="#2b3cff">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,10 +27,14 @@
     <a class="logo" href="#top" aria-label="Youssef Hachicha, top of page">yh<span>_</span></a>
     <nav id="nav" aria-label="Sections"></nav>
     <div class="bar-end">
-      <a class="cv" id="cv" href="CV_Youssef_Hachicha.pdf" download></a>
       <button class="lang" id="lang" type="button" aria-label="Switch language / Changer de langue">
         <span data-l="en">EN</span><span data-l="fr">FR</span>
       </button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark/light mode" title="Mode sombre / clair">
+        <span class="theme-toggle-icon" id="themeIcon"></span>
+      </button>
+      <a class="cv" id="cv" href="CV_Youssef_Hachicha.pdf" download></a>
+      <a class="nav-contact" id="navContact" href="#contact"></a>
     </div>
   </header>
 
@@ -46,6 +58,8 @@
     <section class="sec" id="about"></section>
     <section class="sec" id="projects"></section>
     <section class="sec" id="skills"></section>
+    <section class="sec" id="certifications"></section>
+    <section class="sec" id="languages"></section>
     <section class="sec" id="events"></section>
     <section class="sec" id="contact"></section>
   </main>
@@ -56,6 +70,8 @@
     <canvas id="loss" width="240" height="110"></canvas>
     <p><span id="mEpoch"></span><span id="mLoss"></span></p>
   </aside>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
